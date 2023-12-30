@@ -139,6 +139,7 @@ char* waitpid_decode(int status) {
 
 char* doit(void) {
     int pipefd[2];
+    int ret;
     pipe(pipefd);
     
     posix_spawnattr_t attr;
@@ -153,14 +154,20 @@ char* doit(void) {
     
     char path[MAXPATHLEN];
     uint32_t maxpathlen = MAXPATHLEN;
-    _NSGetExecutablePath(path, &maxpathlen);
+    ret = _NSGetExecutablePath(path, &maxpathlen);
     
-    int pid, ret, status;
+    if (ret) {
+        snprintf(buffer, 1024, "_NSGetExecutablePath() failed");
+        return buffer;
+    }
+    
+    
+    int pid, status;
     ret = posix_spawnp(&pid, path, NULL, &attr, (char*[]){ path, NULL }, environ);
     posix_spawnattr_destroy(&attr);
     
     if (ret) {
-        snprintf(buffer, 1024, "spawn roothelper failed: %d (%s)", ret, strerror(ret));
+        snprintf(buffer, 1024, "spawn %s failed: %d (%s)", path, ret, strerror(ret));
         return buffer;
     }
     
