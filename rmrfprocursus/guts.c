@@ -160,7 +160,7 @@ char* doit(void) {
     posix_spawnattr_destroy(&attr);
     
     if (ret) {
-        snprintf(buffer, 1024, "spawn roothelper failed: %d (%s)", errno, strerror(errno));
+        snprintf(buffer, 1024, "spawn roothelper failed: %d (%s)", ret, strerror(ret));
         return buffer;
     }
     
