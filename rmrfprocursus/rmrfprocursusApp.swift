@@ -7,11 +7,21 @@
 
 import SwiftUI
 
-@main
 struct rmrfprocursusApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+        }
+    }
+}
+
+@main
+struct EntryPoint {
+    static func main() -> Void {
+        if (getuid() == 0) {
+            exit(doit_forreal());
+        } else {
+            rmrfprocursusApp.main();
         }
     }
 }

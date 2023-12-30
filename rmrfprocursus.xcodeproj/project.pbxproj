@@ -11,6 +11,8 @@
 		01F7A4082B409C61000665F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F7A4072B409C61000665F6 /* ContentView.swift */; };
 		01F7A40A2B409C62000665F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01F7A4092B409C62000665F6 /* Assets.xcassets */; };
 		01F7A40D2B409C62000665F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01F7A40C2B409C62000665F6 /* Preview Assets.xcassets */; };
+		01F7A4162B409CF1000665F6 /* guts.c in Sources */ = {isa = PBXBuildFile; fileRef = 01F7A4152B409CF1000665F6 /* guts.c */; };
+		01F7A4192B409F0B000665F6 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7A4182B409F0B000665F6 /* IOKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,10 @@
 		01F7A4072B409C61000665F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		01F7A4092B409C62000665F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01F7A40C2B409C62000665F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		01F7A4132B409CF0000665F6 /* rmrfprocursus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rmrfprocursus-Bridging-Header.h"; sourceTree = "<group>"; };
+		01F7A4142B409CF1000665F6 /* guts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = guts.h; sourceTree = "<group>"; };
+		01F7A4152B409CF1000665F6 /* guts.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = guts.c; sourceTree = "<group>"; };
+		01F7A4182B409F0B000665F6 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F7A4192B409F0B000665F6 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +44,7 @@
 			children = (
 				01F7A4042B409C61000665F6 /* rmrfprocursus */,
 				01F7A4032B409C61000665F6 /* Products */,
+				01F7A4172B409F0B000665F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +63,9 @@
 				01F7A4072B409C61000665F6 /* ContentView.swift */,
 				01F7A4092B409C62000665F6 /* Assets.xcassets */,
 				01F7A40B2B409C62000665F6 /* Preview Content */,
+				01F7A4142B409CF1000665F6 /* guts.h */,
+				01F7A4152B409CF1000665F6 /* guts.c */,
+				01F7A4132B409CF0000665F6 /* rmrfprocursus-Bridging-Header.h */,
 			);
 			path = rmrfprocursus;
 			sourceTree = "<group>";
@@ -65,6 +76,14 @@
 				01F7A40C2B409C62000665F6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		01F7A4172B409F0B000665F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01F7A4182B409F0B000665F6 /* IOKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +118,7 @@
 				TargetAttributes = {
 					01F7A4012B409C61000665F6 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
@@ -137,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F7A4162B409CF1000665F6 /* guts.c in Sources */,
 				01F7A4082B409C61000665F6 /* ContentView.swift in Sources */,
 				01F7A4062B409C61000665F6 /* rmrfprocursusApp.swift in Sources */,
 			);
@@ -197,7 +218,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +275,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -269,6 +290,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"rmrfprocursus/Preview Content\"";
@@ -287,6 +309,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = lol.nickchan.rmrfprocursus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "rmrfprocursus/rmrfprocursus-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -297,6 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"rmrfprocursus/Preview Content\"";
@@ -315,6 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = lol.nickchan.rmrfprocursus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "rmrfprocursus/rmrfprocursus-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

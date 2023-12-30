@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var message = "";
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text(message).padding(8);
+            Button(action: {
+                DispatchQueue.main.async {
+                    let unsafePointer = doit();
+                    message = String(cString: unsafePointer!);
+                    free(unsafePointer);
+                }
+            }) {
+                Text("delete")
+            }
         }
         .padding()
     }
